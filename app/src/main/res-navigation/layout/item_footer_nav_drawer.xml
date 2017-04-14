@@ -61,17 +61,17 @@
       android:textAllCaps="true"/>
 
     <TextView
-      android:id="@+id/tv_rate"
-      style="@style/text_caption_dark"
-      android:layout_width="wrap_content"
-      android:layout_height="@dimen/list_item_height"
-      android:background="@drawable/selector_default"
-      android:gravity="center_vertical"
-      android:maxLines="1"
-      android:paddingLeft="@dimen/first_keyline"
-      android:paddingRight="@dimen/first_keyline"
-      android:text="@string/rate"
-      android:textAllCaps="true"/>
+        android:id="@+id/md_about"
+        style="@style/text_caption_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@drawable/selector_default"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/first_keyline"
+        android:paddingRight="@dimen/first_keyline"
+        android:text="@string/about_mechdome"
+        android:textAllCaps="true"/>
 
   </LinearLayout>
 

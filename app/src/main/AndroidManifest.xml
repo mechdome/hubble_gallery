@@ -47,6 +47,8 @@
     <meta-data
       android:name="io.fabric.ApiKey"
       android:value="4380b3109a9ab4f6f9e83235aa8fce93a9335556"/>
+
+    <meta-data android:name="md_remove_ads" android:value="com.derek_s.hubble_gallery.MechDomeAd" />
   </application>
 
 </manifest>

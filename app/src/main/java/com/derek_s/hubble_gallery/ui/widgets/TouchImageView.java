@@ -1,6 +1,7 @@
 package com.derek_s.hubble_gallery.ui.widgets;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -127,6 +128,7 @@ public class TouchImageView extends ImageView {
   public void setOnDoubleTapListener(GestureDetector.OnDoubleTapListener l) {
     doubleTapListener = l;
   }
+
 
   @Override
   public void setImageResource(int resId) {

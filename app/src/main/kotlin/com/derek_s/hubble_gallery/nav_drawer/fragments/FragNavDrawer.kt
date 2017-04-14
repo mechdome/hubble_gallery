@@ -28,6 +28,7 @@ import com.derek_s.hubble_gallery.nav_drawer.presenters.NavigationPresenter
 import com.derek_s.hubble_gallery.nav_drawer.views.NavigationView
 import com.derek_s.hubble_gallery.ui.activities.ActWelcome
 import com.derek_s.hubble_gallery.utils.ui.FontFactory
+import com.mechdome.aboutmechdome.AboutMechDomeActivity
 
 interface NavDrawerListeners {
   val toolbar: Toolbar
@@ -47,6 +48,7 @@ class FragNavDrawer : Fragment(), NavigationView {
   lateinit var rvDrawer: RecyclerView
   lateinit var llFooterItems: LinearLayout
   lateinit var tvAbout: TextView
+  lateinit var mdAbout: TextView
   lateinit var tvRate: TextView
   lateinit var rlFavorites: RelativeLayout
   lateinit var tvFavorites: TextView
@@ -83,7 +85,8 @@ class FragNavDrawer : Fragment(), NavigationView {
     rvDrawer = rootView.findViewById(R.id.rv_drawer) as RecyclerView
     llFooterItems = rootView.findViewById(R.id.ll_footer_items) as LinearLayout
     tvAbout = rootView.findViewById(R.id.tv_about) as TextView
-    tvRate = rootView.findViewById(R.id.tv_rate) as TextView
+//    tvRate = rootView.findViewById(R.id.tv_rate) as TextView
+    mdAbout = rootView.findViewById(R.id.md_about) as TextView
     rlFavorites = rootView.findViewById(R.id.rl_favorites) as RelativeLayout
     tvFavorites = rootView.findViewById(R.id.tv_favorites) as TextView
 
@@ -98,18 +101,23 @@ class FragNavDrawer : Fragment(), NavigationView {
         activity.startActivity(Intent(activity, ActWelcome::class.java));
       }
     })
+
     tvAbout.setOnClickListener {
       dialogAbout!!.show()
     }
 
-    tvRate.setOnClickListener {
-      var appPackageName = context.packageName;
-      try {
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-      } catch (anfe: android.content.ActivityNotFoundException) {
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
-      }
+    mdAbout.setOnClickListener {
+      startActivity(Intent(activity, AboutMechDomeActivity::class.java));
     }
+
+//    tvRate.setOnClickListener {
+//      var appPackageName = context.packageName;
+//      try {
+//        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+//      } catch (anfe: android.content.ActivityNotFoundException) {
+//        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+//      }
+//    }
 
     if (presenter!!.getSelectedQuery().equals("favorites")) {
       setFavoritesSelectedUI(true)
@@ -216,7 +224,8 @@ class FragNavDrawer : Fragment(), NavigationView {
 
   private fun beautifyViews() {
     tvAbout.typeface = FontFactory.getCondensedBold(context);
-    tvRate.typeface = FontFactory.getCondensedBold(context);
+//    tvRate.typeface = FontFactory.getCondensedBold(context);
     tvFavorites.typeface = FontFactory.getMedium(context);
+    mdAbout.typeface = FontFactory.getCondensedBold(context);
   }
 }

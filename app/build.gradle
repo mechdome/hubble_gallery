@@ -120,5 +120,5 @@ dependencies {
     compile("com.crashlytics.sdk.android:crashlytics:$crashlytics_version") {
         transitive = true;
     }
-    compile 'com.mechdome:MechDome-About:0.7'
+    compile 'com.mechdome:MechDome-About:+'
 }
